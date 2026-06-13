@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-
 <!-- Facebook Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -28,1158 +26,355 @@ src="https://www.facebook.com/tr?id=975467521993323&ev=PageView&noscript=1"/>
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "x6ehss1ofj");
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heróis da Bíblia — O Álbum de Figurinhas Bíblico</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
-
-  :root {
-    --emerald:        #059669;
-    --emerald-dark:   #047857;
-    --emerald-deeper: #064E3B;
-    --emerald-light:  #D1FAE5;
-    --gold:           #F59E0B;
-    --gold-light:     #FDE68A;
-    --gold-dark:      #B45309;
-    --cream:          #F0FDF9;
-    --white:          #FFFFFF;
-    --gray:           #6B7280;
-    --text:           #064E3B;
-    --red:            #DC2626;
-    --green-cta:      #16A34A;
-    --green-cta-dark: #14532D;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Nunito', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* ANNOUNCEMENT */
-  .announcement {
-    background: var(--emerald-deeper);
-    color: var(--gold-light);
-    text-align: center;
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-  }
-
-  /* HERO */
-  .hero {
-    background: linear-gradient(160deg, var(--emerald-deeper) 0%, var(--emerald-dark) 55%, var(--emerald) 100%);
-    padding: 48px 20px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -80px; left: -80px;
-    width: 320px; height: 320px;
-    background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; right: -60px;
-    width: 260px; height: 260px;
-    background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--emerald-deeper);
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 100px;
-    margin-bottom: 24px;
-  }
-
-  .hero h1 {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero h1 span { color: var(--gold-light); }
-
-  .hero-sub {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: rgba(255,255,255,0.85);
-    max-width: 620px;
-    margin: 0 auto 32px;
-    line-height: 1.6;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-mockup {
-    max-width: 520px;
-    width: 98%;
-    margin: 8px auto 8px;
-    display: block;
-    filter: drop-shadow(0 16px 32px rgba(0,0,0,0.35));
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 480px) {
-    .hero-mockup {
-      width: 96%;
-      max-width: 380px;
-      margin: 8px auto 8px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álbum da Bíblia – BíbliaTeca Mapeada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cor-fundo: #fff8f0;
+      --cor-primaria: #7c3aed;
+      --cor-primaria-escura: #5b21b6;
+      --cor-destaque: #f59e0b;
+      --cor-verde: #16a34a;
+      --cor-texto: #1e1b4b;
+      --cor-texto-suave: #4b5563;
+      --cor-borda: #e5e7eb;
+      --cor-fundo-secao: #f5f3ff;
+      --cor-fundo-escuro: #1e1b4b;
     }
-  }
-
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-    margin-top: 8px;
-  }
-
-  .stat { text-align: center; }
-
-  .stat-number {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    color: var(--gold-light);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.65);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 4px;
-  }
-
-  /* SECTION BASE */
-  .section-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    color: var(--text);
-    text-align: center;
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
-
-  .section-sub {
-    text-align: center;
-    color: var(--gray);
-    font-size: 1rem;
-    margin-bottom: 40px;
-    line-height: 1.6;
-  }
-
-  /* PROBLEM */
-  .problem-section {
-    background: var(--white);
-    padding: 64px 20px;
-  }
-
-  .problem-inner { max-width: 720px; margin: 0 auto; }
-
-  .problem-intro {
-    font-size: 1.1rem;
-    color: var(--text);
-    text-align: center;
-    line-height: 1.7;
-    margin-bottom: 40px;
-  }
-
-  .problem-intro strong { color: var(--emerald-dark); }
-
-  .barriers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .barrier-card {
-    background: var(--emerald-light);
-    border-left: 4px solid var(--emerald);
-    border-radius: 12px;
-    padding: 20px 22px;
-  }
-
-  .barrier-icon { font-size: 1.5rem; margin-bottom: 8px; }
-
-  .barrier-title {
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .barrier-text {
-    font-size: 0.88rem;
-    color: var(--gray);
-    line-height: 1.55;
-  }
-
-  /* QUOTE */
-  .quote-section {
-    background: linear-gradient(135deg, var(--emerald-deeper), var(--emerald-dark));
-    padding: 56px 20px;
-    text-align: center;
-  }
-
-  .quote-text {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.3rem, 3.5vw, 1.9rem);
-    color: var(--gold-light);
-    max-width: 600px;
-    margin: 0 auto 16px;
-    line-height: 1.4;
-  }
-
-  .quote-ref {
-    color: rgba(255,255,255,0.55);
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  /* WHAT IS */
-  .whatis-section {
-    padding: 64px 20px;
-    background: var(--cream);
-  }
-
-  .whatis-inner { max-width: 720px; margin: 0 auto; }
-
-  .whatis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .whatis-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 24px 20px;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    border-top: 3px solid var(--gold);
-    transition: transform 0.2s;
-  }
-
-  .whatis-card:hover { transform: translateY(-4px); }
-
-  .whatis-icon { font-size: 2rem; margin-bottom: 12px; }
-
-  .whatis-card-title {
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .whatis-card-text {
-    font-size: 0.85rem;
-    color: var(--gray);
-    line-height: 1.55;
-  }
-
-  /* TEAM */
-  .team-section {
-    background: linear-gradient(160deg, var(--emerald-deeper), var(--emerald-dark));
-    padding: 64px 20px;
-    text-align: center;
-  }
-
-  .team-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    color: var(--gold-light);
-    margin-bottom: 8px;
-  }
-
-  .team-sub {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-  }
-
-  .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .team-badge {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(245,158,11,0.4);
-    border-radius: 100px;
-    padding: 10px 20px;
-    color: var(--white);
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* INCLUDES */
-  .includes-section {
-    padding: 64px 20px;
-    background: var(--white);
-  }
-
-  .includes-inner { max-width: 720px; margin: 0 auto; }
-
-  .includes-list {
-    display: grid;
-    gap: 16px;
-    margin-top: 40px;
-  }
-
-  .include-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: var(--cream);
-    border-radius: 14px;
-    padding: 20px 22px;
-    border: 1px solid rgba(5,150,105,0.2);
-  }
-
-  .include-icon-wrap {
-    background: var(--gold);
-    border-radius: 12px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-
-  .include-title {
-    font-weight: 800;
-    font-size: 1rem;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
-  .include-desc {
-    font-size: 0.88rem;
-    color: var(--gray);
-    line-height: 1.5;
-  }
-
-  /* CERTIFICATE */
-  .certificate-section {
-    background: linear-gradient(135deg, #FFFBEB, #F0FDF9);
-    border-top: 3px solid var(--gold);
-    border-bottom: 3px solid var(--gold);
-    padding: 56px 20px;
-    text-align: center;
-  }
-
-  .cert-emoji { font-size: 3rem; margin-bottom: 16px; }
-
-  .cert-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    color: var(--text);
-    margin-bottom: 12px;
-  }
-
-  .cert-text {
-    color: var(--gray);
-    font-size: 1rem;
-    line-height: 1.65;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .cert-highlight { font-weight: 800; color: var(--emerald-dark); }
-
-  /* TESTIMONIALS */
-  .testimonials-section {
-    padding: 64px 20px;
-    background: var(--cream);
-  }
-
-  .testimonials-inner { max-width: 720px; margin: 0 auto; }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-    margin-top: 40px;
-  }
-
-  .testimonial-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 22px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    border-bottom: 3px solid var(--emerald);
-  }
-
-  .stars {
-    color: var(--gold);
-    font-size: 1rem;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-  }
-
-  .testimonial-text {
-    font-size: 0.92rem;
-    color: var(--text);
-    line-height: 1.6;
-    margin-bottom: 14px;
-    font-style: italic;
-  }
-
-  .testimonial-author {
-    font-weight: 800;
-    font-size: 0.85rem;
-    color: var(--gray);
-  }
-
-  .testimonials-count {
-    text-align: center;
-    margin-top: 32px;
-    font-weight: 800;
-    color: var(--emerald-dark);
-    font-size: 1rem;
-  }
-
-  /* PRICING */
-  .pricing-section {
-    background: linear-gradient(160deg, var(--emerald-deeper), var(--emerald-dark));
-    padding: 72px 20px;
-    text-align: center;
-  }
-
-  .pricing-badge {
-    display: inline-block;
-    background: var(--red);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 6px 18px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-  }
-
-  .pricing-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.8rem, 5vw, 2.6rem);
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .pricing-sub {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-  }
-
-  .pricing-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 40px 32px;
-    max-width: 440px;
-    margin: 0 auto;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-  }
-
-  .pricing-product {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    color: var(--text);
-    margin-bottom: 20px;
-  }
-
-  .pricing-includes {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 28px;
-  }
-
-  .pricing-includes li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.92rem;
-    color: var(--text);
-    font-weight: 600;
-    padding: 7px 0;
-    border-bottom: 1px solid #F3F4F6;
-  }
-
-  .pricing-includes li:last-child { border-bottom: none; }
-
-  .check { color: var(--emerald); font-size: 1.1rem; flex-shrink: 0; }
-
-  .price-installment {
-    font-size: 0.9rem;
-    color: var(--gray);
-    margin-bottom: 4px;
-  }
-
-  .price-main {
-    font-family: 'Fredoka One', cursive;
-    font-size: 3rem;
-    color: var(--text);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .price-main span {
-    font-size: 1.5rem;
-    vertical-align: top;
-    margin-top: 8px;
-    display: inline-block;
-  }
-
-  .price-note {
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin-bottom: 28px;
-  }
-
-  .cta-btn {
-    display: block;
-    width: 100%;
-    background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
-    color: var(--white);
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    padding: 18px 24px;
-    border-radius: 16px;
-    text-decoration: none;
-    text-align: center;
-    letter-spacing: 0.02em;
-    box-shadow: 0 8px 24px rgba(5,150,105,0.45);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    border: none;
-    margin-bottom: 16px;
-  }
-
-  .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(5,150,105,0.55);
-  }
-
-  .trust-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.78rem;
-    color: var(--gray);
-    font-weight: 700;
-  }
-
-  /* GUARANTEE */
-  .guarantee-section {
-    padding: 64px 20px;
-    background: var(--white);
-    text-align: center;
-  }
-
-  .guarantee-inner {
-    max-width: 560px;
-    margin: 0 auto;
-    background: var(--cream);
-    border: 2px solid var(--emerald);
-    border-radius: 20px;
-    padding: 40px 32px;
-  }
-
-  .guarantee-icon { font-size: 3rem; margin-bottom: 16px; }
-
-  .guarantee-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.6rem;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
-
-  .guarantee-text {
-    color: var(--gray);
-    font-size: 0.95rem;
-    line-height: 1.65;
-  }
-
-  /* FAQ */
-  .faq-section {
-    padding: 64px 20px;
-    background: var(--cream);
-  }
-
-  .faq-inner { max-width: 680px; margin: 0 auto; }
-
-  .faq-list {
-    margin-top: 40px;
-    display: grid;
-    gap: 12px;
-  }
-
-  .faq-item {
-    background: var(--white);
-    border-radius: 14px;
-    border: 1px solid #E5E7EB;
-    overflow: hidden;
-  }
-
-  .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 18px 22px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.97rem;
-    font-weight: 800;
-    color: var(--text);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .faq-arrow {
-    font-size: 1rem;
-    color: var(--emerald);
-    transition: transform 0.2s;
-    flex-shrink: 0;
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .faq-answer-inner {
-    padding: 0 22px 18px;
-    font-size: 0.9rem;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-
-  .faq-item.open .faq-answer { max-height: 200px; }
-  .faq-item.open .faq-arrow { transform: rotate(180deg); }
-
-  /* FINAL CTA */
-  .final-cta {
-    background: linear-gradient(160deg, var(--emerald-deeper), var(--emerald-dark));
-    padding: 72px 20px;
-    text-align: center;
-  }
-
-  .final-cta-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    color: var(--white);
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-
-  .final-cta-title span { color: var(--gold-light); }
-
-  .final-cta-sub {
-    color: rgba(255,255,255,0.7);
-    font-size: 1rem;
-    margin-bottom: 36px;
-    line-height: 1.6;
-  }
-
-  .final-cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-    color: var(--emerald-deeper);
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    padding: 18px 40px;
-    border-radius: 16px;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(245,158,11,0.45);
-    transition: transform 0.2s;
-  }
-
-  .final-cta-btn:hover { transform: translateY(-2px); }
-
-  /* FOOTER */
-  footer {
-    background: var(--emerald-deeper);
-    padding: 32px 20px;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  footer p {
-    color: rgba(255,255,255,0.35);
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 480px) {
-    .hero-stats { gap: 20px; }
-    .pricing-card { padding: 28px 20px; }
-    .guarantee-inner { padding: 28px 20px; }
-  }
-</style>
+    body { font-family: 'Open Sans', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.6; }
+
+    .topo-oferta { background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura)); color: #fff; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 700; }
+
+    .hero { background: linear-gradient(180deg, #f5f3ff 0%, #fff8f0 100%); text-align: center; padding: 48px 20px 40px; }
+    .hero-badge { display: inline-block; background: var(--cor-destaque); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 18px; border-radius: 100px; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Merriweather', serif; font-size: clamp(26px, 5vw, 44px); font-weight: 900; max-width: 760px; margin: 0 auto 16px; line-height: 1.25; }
+    .hero p { font-size: 16px; color: var(--cor-texto-suave); max-width: 600px; margin: 0 auto 28px; }
+    .hero-img { max-width: 660px; margin: 0 auto 28px; border-radius: 12px; display: block; width: 100%; }
+    .hero-desc { font-size: 17px; color: var(--cor-texto-suave); max-width: 640px; margin: 0 auto 16px; }
+    .hero-desc strong { color: var(--cor-texto); }
+    .selo-aprovacao { display: inline-block; font-size: 13px; color: var(--cor-primaria); font-weight: 600; background: #ede9fe; padding: 6px 18px; border-radius: 100px; margin-bottom: 32px; }
+
+    .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; padding: 0 20px 48px; }
+    .stat-item { text-align: center; background: #fff; border: 1px solid var(--cor-borda); border-radius: 14px; padding: 20px 32px; min-width: 130px; box-shadow: 0 2px 8px rgba(124,58,237,0.06); }
+    .stat-num { font-family: 'Merriweather', serif; font-size: 36px; font-weight: 900; color: var(--cor-primaria); }
+    .stat-label { font-size: 12px; color: var(--cor-texto-suave); font-weight: 600; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .secao { padding: 56px 20px; max-width: 860px; margin: 0 auto; }
+    .secao-titulo { font-family: 'Merriweather', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 900; margin-bottom: 20px; text-align: center; }
+    .secao-subtitulo { font-size: 17px; color: var(--cor-texto-suave); text-align: center; max-width: 680px; margin: 0 auto 36px; line-height: 1.7; }
+
+    .oque-e { background: var(--cor-fundo-secao); }
+    .oque-e-intro { font-family: 'Merriweather', serif; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 32px; line-height: 1.6; }
+    .grid-beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 36px; }
+    .card-beneficio { background: #fff; border: 1px solid var(--cor-borda); border-radius: 14px; padding: 24px 20px; text-align: center; }
+    .card-beneficio .emoji { font-size: 30px; margin-bottom: 12px; }
+    .card-beneficio h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .card-beneficio p { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.5; }
+    .citacao-rodape { text-align: center; font-size: 15px; color: var(--cor-primaria); font-weight: 600; font-style: italic; }
+
+    .img-mockup-2 { max-width: 640px; margin: 0 auto 36px; border-radius: 12px; display: block; width: 100%; }
+    .grid-barreiras { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 36px; }
+    .card-barreira { background: #fff8f0; border-left: 4px solid var(--cor-destaque); border-radius: 8px; padding: 20px 18px; }
+    .card-barreira h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .card-barreira p { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.5; }
+
+    .citacao-biblica { background: var(--cor-fundo-escuro); color: #fff; border-radius: 14px; padding: 32px 28px; text-align: center; max-width: 600px; margin: 0 auto 32px; }
+    .citacao-biblica .label { font-size: 12px; color: #a78bfa; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .citacao-biblica blockquote { font-family: 'Merriweather', serif; font-size: 17px; font-style: italic; line-height: 1.7; margin-bottom: 12px; }
+    .citacao-biblica cite { font-size: 13px; color: #a78bfa; }
+    .texto-transicao { font-size: 16px; color: var(--cor-texto-suave); text-align: center; max-width: 720px; margin: 0 auto 12px; line-height: 1.7; }
+
+    .secao-time { background: var(--cor-fundo-secao); }
+    .grid-time { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 32px; }
+    .card-time { background: #fff; border: 1px solid var(--cor-borda); border-radius: 10px; padding: 16px 12px; text-align: center; font-size: 13px; font-weight: 600; }
+    .card-time .emoji { font-size: 22px; margin-bottom: 8px; display: block; }
+    .img-time { max-width: 700px; margin: 0 auto; border-radius: 12px; display: block; width: 100%; }
+
+    .divisor { text-align: center; font-size: 13px; color: var(--cor-primaria); font-style: italic; font-weight: 600; background: var(--cor-fundo-secao); padding: 18px 20px; }
+
+    .secao-feedbacks { background: #fff; }
+    .grid-feedbacks { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .grid-feedbacks img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block; }
+
+    .secao-recebe { background: var(--cor-fundo-escuro); color: #fff; }
+    .secao-recebe .secao-titulo { color: #fff; }
+    .grid-recebe { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .card-recebe { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 24px 20px; text-align: center; }
+    .card-recebe .emoji { font-size: 30px; margin-bottom: 12px; display: block; }
+    .card-recebe h4 { font-size: 14px; font-weight: 700; color: #e9d5ff; margin-bottom: 8px; }
+    .card-recebe p { font-size: 13px; color: #c4b5fd; line-height: 1.5; }
+    .citacao-recebe { text-align: center; color: #a78bfa; font-style: italic; font-size: 15px; }
+
+    .secao-missao { background: var(--cor-fundo-secao); text-align: center; }
+    .secao-missao .secao-titulo { color: var(--cor-primaria); }
+    .missao-texto { font-size: 16px; color: var(--cor-texto-suave); max-width: 620px; margin: 0 auto; line-height: 1.8; }
+    .missao-destaque { font-size: 20px; font-weight: 700; color: var(--cor-destaque); margin: 12px 0; }
+
+    .secao-preco { background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura)); color: #fff; text-align: center; padding: 60px 20px; }
+    .preco-badge { display: inline-block; background: var(--cor-destaque); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 16px; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase; }
+    .preco-titulo { font-family: 'Merriweather', serif; font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+    .preco-subtitulo { font-size: 14px; color: #c4b5fd; margin-bottom: 32px; }
+    .preco-card { background: #fff; color: var(--cor-texto); border-radius: 20px; padding: 36px 32px; max-width: 400px; margin: 0 auto 28px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    .preco-parcelado { font-size: 14px; color: var(--cor-texto-suave); margin-bottom: 8px; }
+    .preco-valor-parcela { font-family: 'Merriweather', serif; font-size: 38px; font-weight: 900; color: var(--cor-primaria); margin-bottom: 8px; }
+    .preco-ou { font-size: 13px; color: var(--cor-texto-suave); margin: 12px 0; }
+    .preco-pix { font-size: 28px; font-weight: 900; color: var(--cor-verde); margin-bottom: 4px; }
+    .preco-pix-label { font-size: 13px; color: var(--cor-texto-suave); }
+    .btn-comprar { display: block; background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; font-size: 17px; font-weight: 700; text-decoration: none; padding: 18px 32px; border-radius: 100px; margin-top: 24px; transition: opacity 0.2s; }
+    .btn-comprar:hover { opacity: 0.9; }
+    .selos-compra { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; color: #c4b5fd; }
+    .garantia-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 24px 28px; max-width: 500px; margin: 0 auto; text-align: center; }
+    .garantia-box h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .garantia-box p { font-size: 14px; color: #c4b5fd; line-height: 1.6; }
+
+    .secao-faq { background: #fff; }
+    .faq-item { border: 1px solid var(--cor-borda); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+    .faq-pergunta { width: 100%; background: none; border: none; text-align: left; padding: 18px 20px; font-size: 15px; font-weight: 700; color: var(--cor-texto); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Open Sans', sans-serif; }
+    .faq-pergunta:hover { background: var(--cor-fundo-secao); }
+    .faq-pergunta .seta { font-size: 18px; transition: transform 0.25s; }
+    .faq-pergunta.aberta .seta { transform: rotate(45deg); }
+    .faq-resposta { display: none; padding: 0 20px 18px; font-size: 14px; color: var(--cor-texto-suave); line-height: 1.7; }
+    .faq-resposta.visivel { display: block; }
+
+    .secao-fechamento { background: var(--cor-fundo-secao); text-align: center; padding: 60px 20px; }
+    .fechamento-titulo { font-family: 'Merriweather', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 900; margin-bottom: 16px; }
+    .fechamento-subtitulo { font-size: 16px; color: var(--cor-texto-suave); max-width: 520px; margin: 0 auto 12px; line-height: 1.7; }
+    .fechamento-verso { font-style: italic; color: var(--cor-primaria); font-size: 15px; margin-bottom: 32px; }
+    .btn-comprar-lg { display: inline-block; background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; font-size: 18px; font-weight: 700; text-decoration: none; padding: 20px 48px; border-radius: 100px; box-shadow: 0 6px 24px rgba(22,163,74,0.3); transition: opacity 0.2s; }
+    .btn-comprar-lg:hover { opacity: 0.9; }
+
+    footer { background: var(--cor-fundo-escuro); color: #a78bfa; text-align: center; padding: 32px 20px; font-size: 13px; }
+    footer img.logo-footer { height: 48px; object-fit: contain; margin: 0 auto 16px; display: block; }
+    .links-footer { display: flex; justify-content: center; gap: 20px; margin: 12px 0; }
+    footer a { color: #a78bfa; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      .stats { gap: 12px; }
+      .stat-item { padding: 16px 20px; min-width: 100px; }
+      .stat-num { font-size: 28px; }
+      .grid-feedbacks { grid-template-columns: repeat(2, 1fr); }
+      .preco-card { padding: 28px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="announcement">
-  📖 OFERTA DE LANÇAMENTO   Acesso imediato e vitalício!
-</div>
+  <div class="topo-oferta">📖 OFERTA DE LANÇAMENTO!</div>
 
-<section class="hero">
-  <div class="hero-badge">✨ Novo Produto Digital</div>
-  <h1>Seus filhos vão <span>colecionar</span> os<br>Heróis da Bíblia!</h1>
-  <p class="hero-sub">O álbum de figurinhas que transforma os personagens bíblicos em heróis que as crianças vão querer conhecer, colecionar e nunca esquecer.</p>
+  <section class="hero">
+    <div class="hero-badge">📖 Álbum da Bíblia</div>
+    <h1>A seleção mais poderosa da história virou álbum de figurinhas!</h1>
+    <p>Inspirado no sucesso do álbum da Copa, um fenômeno que ganhou os lares brasileiros despertando o interesse das crianças por jogadores de futebol, nasceu o <strong>Álbum da Bíblia:</strong></p>
 
-  <img
-    src="https://github.com/aprendendofacil/heroisdabiblia/blob/main/123123.png?raw=true"
-    alt="Mockup Heróis da Bíblia"
-    class="hero-mockup"
-  />
+    <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/almbum.png?raw=true" alt="Álbum da Bíblia mockup" class="hero-img" />
 
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-number">80+</div>
-      <div class="stat-label">Heróis Bíblicos</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">9</div>
-      <div class="stat-label">Categorias</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">20+</div>
-      <div class="stat-label">Páginas de Álbum</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Digital e Imprimível</div>
-    </div>
+    <p class="hero-desc">Uma coleção com 87 personagens bíblicos em forma de figurinhas colecionáveis, <strong>do Antigo ao Novo Testamento.</strong></p>
+    <div class="selo-aprovacao">✨ Aprovado por pastores, professores e líderes de Ministério Infantil</div>
+  </section>
+
+  <div class="stats">
+    <div class="stat-item"><div class="stat-num">87</div><div class="stat-label">Figurinhas Bíblicas</div></div>
+    <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Categorias</div></div>
+    <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Páginas de Álbum</div></div>
+    <div class="stat-item"><div class="stat-num">Todas</div><div class="stat-label">as Idades</div></div>
   </div>
-</section>
 
-<section class="problem-section">
-  <div class="problem-inner">
-    <h2 class="section-title">Você já tentou contar histórias bíblicas para seu filho e ele perdeu o interesse?</h2>
-    <p class="problem-intro">
-      Não é culpa sua e muito menos dele. As crianças aprendem quando estão <strong>brincando</strong>. O problema está na forma como apresentamos a Palavra e não na Palavra em si.
+  <section class="oque-e">
+    <div class="secao">
+      <h2 class="secao-titulo">📖 O que é o Álbum da Bíblia?</h2>
+      <p class="oque-e-intro">O Álbum da Bíblia traz os principais personagens da Bíblia organizados para a mente de uma criança, de forma clara, didática, ilustrada e inesquecível.</p>
+      <p class="secao-subtitulo">Uma ótima oportunidade para despertar o interesse pela Palavra e transformar brincadeira em momentos memoráveis e experiências inesquecíveis em família.</p>
+      <div class="grid-beneficios">
+        <div class="card-beneficio"><div class="emoji">👤</div><h4>Personagens bíblicos</h4><p>Quem foram os principais personagens e o papel de cada um na história da Bíblia</p></div>
+        <div class="card-beneficio"><div class="emoji">📜</div><h4>Versículos importantes</h4><p>Cada figurinha traz um versículo relacionado ao personagem para um momento devocional em família durante a brincadeira</p></div>
+        <div class="card-beneficio"><div class="emoji">🗂️</div><h4>Categorias organizadas</h4><p>Patriarcas, Líderes do Antigo Testamento, Juízes, Reis, Profetas Maiores, Profetas Menores, Líderes pós Exílio, Precursores, Apóstolos, Mulheres...</p></div>
+        <div class="card-beneficio"><div class="emoji">🌍</div><h4>Contexto histórico</h4><p>Do Antigo ao Novo Testamento, em ordem cronológica para facilitar o entendimento e a memorização</p></div>
+      </div>
+      <p class="citacao-rodape">📜 Cada página preenchida é mais um pedacinho da Bíblia guardado no coração.</p>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="secao">
+      <p class="secao-subtitulo"><strong>A Bíblia é encantadora, mas pra que as crianças a vejam dessa forma, nós precisamos apresentá-la como tal!</strong></p>
+
+      <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/biblia.png?raw=true" alt="Páginas do álbum" class="img-mockup-2" />
+
+      <p class="secao-subtitulo">Se você acha difícil despertar o interesse da sua criança pela Palavra e inserir um tempo com Deus na rotina dela, saiba que o problema não está em você! Isso acontece porque existem algumas <strong>barreiras</strong> que dificultam essa conexão:</p>
+      <div class="grid-barreiras">
+        <div class="card-barreira"><h4>📱 Concorrência com as telas</h4><p>Em um mundo dominado por games e vídeos, a Bíblia pode parecer menos atrativa. A experiência de colecionar cria um engajamento que nenhuma tela consegue substituir.</p></div>
+        <div class="card-barreira"><h4>📖 Barreira de contexto</h4><p>As histórias bíblicas fazem parte de um contexto que pode parecer distante da realidade das crianças. O álbum organiza os personagens de forma visual e acessível.</p></div>
+        <div class="card-barreira"><h4>🗣️ Barreira linguística</h4><p>Termos difíceis e linguagem arcaica criam distância. Cada figurinha apresenta o personagem de forma simples, com versículo e contexto fáceis de entender.</p></div>
+      </div>
+      <div class="citacao-biblica">
+        <div class="label">Jesus disse:</div>
+        <blockquote>"Deixem vir a mim as crianças e não as impeçam; pois o Reino dos céus pertence aos que são semelhantes a elas."</blockquote>
+        <cite>— Mateus 19:14</cite>
+      </div>
+      <p class="texto-transicao">Logo, a melhor forma de ultrapassar essas barreiras é através de uma estratégia educativa inovadora, e o Álbum da Bíblia foi criado pensando nisso! O interesse pela experiência do álbum é uma ótima oportunidade para inserir o aprendizado da Palavra de forma lúdica e didática na rotina da criança! Nele, cada personagem faz parte do <strong>Time de Jesus!</strong> Seu filho vai conhecer os heróis da fé de todas as épocas:</p>
+    </div>
+  </section>
+
+  <section class="secao-time">
+    <div class="secao">
+      <h2 class="secao-titulo">🏆 O time de Jesus</h2>
+      <div class="grid-time">
+        <div class="card-time"><span class="emoji">👑</span>Reis</div>
+        <div class="card-time"><span class="emoji">⚔️</span>Juízes</div>
+        <div class="card-time"><span class="emoji">🔥</span>Profetas</div>
+        <div class="card-time"><span class="emoji">🕊️</span>Apóstolos</div>
+        <div class="card-time"><span class="emoji">👨</span>Patriarcas</div>
+        <div class="card-time"><span class="emoji">👩</span>Mulheres da Bíblia</div>
+        <div class="card-time"><span class="emoji">📜</span>Líderes do AT</div>
+        <div class="card-time"><span class="emoji">✨</span>Precursores</div>
+        <div class="card-time"><span class="emoji">🏛️</span>Líderes Pós-Exílio</div>
+      </div>
+      <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/figurinhas.png?raw=true" alt="Time de Jesus" class="img-time" />
+    </div>
+  </section>
+
+  <div class="divisor">📜 Cada figurinha colada se torna uma semente da Palavra plantada no coração.</div>
+
+  <section class="secao-feedbacks">
+    <div class="secao">
+      <h2 class="secao-titulo">Já recebemos + de 1.500 feedbacks de famílias impactadas pela nossa didática!</h2>
+      <div class="grid-feedbacks">
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed1.jpeg?raw=true" alt="Feedback 1" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed10.jpeg?raw=true" alt="Feedback 2" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed10.png?raw=true" alt="Feedback 3" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed11.png?raw=true" alt="Feedback 4" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed12.png?raw=true" alt="Feedback 5" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed13.jpeg?raw=true" alt="Feedback 6" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed14.png?raw=true" alt="Feedback 7" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed15.png?raw=true" alt="Feedback 8" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed16.png?raw=true" alt="Feedback 9" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed17.png?raw=true" alt="Feedback 10" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed19.png?raw=true" alt="Feedback 11" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed2.png?raw=true" alt="Feedback 12" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed20.png?raw=true" alt="Feedback 13" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed21.jpeg?raw=true" alt="Feedback 14" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed22.png?raw=true" alt="Feedback 15" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed23.png?raw=true" alt="Feedback 16" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed24.png?raw=true" alt="Feedback 17" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed25.jpg?raw=true" alt="Feedback 18" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed26.jpeg?raw=true" alt="Feedback 19" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed27.png?raw=true" alt="Feedback 20" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed28.png?raw=true" alt="Feedback 21" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed29.jpeg?raw=true" alt="Feedback 22" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed3.png?raw=true" alt="Feedback 23" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed4.png?raw=true" alt="Feedback 24" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed5.png?raw=true" alt="Feedback 25" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed6.jpeg?raw=true" alt="Feedback 26" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed7.jpeg?raw=true" alt="Feedback 27" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed8.png?raw=true" alt="Feedback 28" />
+        <img src="https://github.com/aprendendofacil/heroiasdabibliacenter/blob/main/feed9.png?raw=true" alt="Feedback 29" />
+        <img src="COLE_AQUI_LINK_FEEDBACK_30" alt="Feedback 30" />
+      </div>
+    </div>
+  </section>
+
+  <section class="secao-recebe">
+    <div class="secao">
+      <h2 class="secao-titulo">✨ O que você recebe</h2>
+      <div class="grid-recebe">
+        <div class="card-recebe"><span class="emoji">📖</span><h4>Álbum completo para imprimir</h4><p>Todas as páginas do álbum organizadas por categoria bíblica, com espaço para colar cada figurinha.</p></div>
+        <div class="card-recebe"><span class="emoji">🎴</span><h4>Pack com 87 figurinhas bíblicas</h4><p>Todos os personagens ilustrados, com nome, versículo e categoria — prontos para imprimir e recortar.</p></div>
+        <div class="card-recebe"><span class="emoji">🏅</span><h4>Certificado de conclusão</h4><p>Ao completar o álbum, a criança recebe um certificado especial reconhecendo sua jornada pela Palavra.</p></div>
+        <div class="card-recebe"><span class="emoji">🖨️</span><h4>Guia de impressão e montagem</h4><p>Orientações completas para imprimir todo o material.</p></div>
+      </div>
+      <p class="citacao-recebe">📜 Cada página preenchida é mais um pedacinho da Bíblia guardado para sempre.</p>
+    </div>
+  </section>
+
+  <section class="secao-missao">
+    <div class="secao">
+      <h2 class="secao-titulo">🏅 MISSÃO CUMPRIDA!</h2>
+      <p class="missao-texto">Ao completar o álbum, a criança recebe um certificado especial reconhecendo sua jornada pela Palavra de Deus.<br /><br />E no final existe uma última figurinha…</p>
+      <p class="missao-destaque">✨ A DELA.</p>
+      <p class="missao-texto">Porque quem caminha com Jesus também faz parte dessa seleção. 💛</p>
+    </div>
+  </section>
+
+  <section class="secao-preco">
+    <div class="preco-badge">⭐ OFERTA ESPECIAL DE LANÇAMENTO</div>
+    <p class="preco-titulo">Álbum da Bíblia</p>
+    <p class="preco-subtitulo">Álbum + 87 Figurinhas + Certificado + Guia de Impressão<br><strong style="color:#fff;">Acesso imediato e vitalício</strong></p>
+    <div class="preco-card">
+      <p class="preco-parcelado">4X de</p>
+      <p class="preco-valor-parcela">R$ 4,97</p>
+      <p class="preco-ou">— ou —</p>
+      <p class="preco-pix">R$ 19,90</p>
+      <p class="preco-pix-label">à vista</p>
+      <a href="https://pay.kirvano.com/b46da561-8572-4135-9ac4-93ce6e0647ff" class="btn-comprar" target="_blank" rel="noopener">QUERO COMEÇAR MINHA COLEÇÃO</a>
+    </div>
+    <div class="selos-compra">
+      <span>📥 Download imediato</span>
+      <span>🔒 Compra segura</span>
+      <span>💜 Acesso vitalício</span>
+    </div>
+    <br />
+    <div class="garantia-box">
+      <h4>🛡️ Garantia de 7 dias — risco zero para você!</h4>
+      <p>Confiamos tanto na qualidade do nosso material, que estamos te oferecendo uma <strong>garantia incondicional de 7 dias</strong>! Caso não esteja totalmente satisfeito, dentro deste prazo, devolvemos <strong>100% do seu dinheiro</strong>.</p>
+      <p style="margin-top:12px; color:#a78bfa;">✅ Compra 100% segura e garantida</p>
+    </div>
+  </section>
+
+  <section class="secao-faq">
+    <div class="secao">
+      <h2 class="secao-titulo">Perguntas frequentes</h2>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">O MATERIAL É FÍSICO OU DIGITAL? <span class="seta">+</span></button>
+        <div class="faq-resposta">O Álbum da Bíblia é um produto digital de alta qualidade com acesso imediato! Você não precisa esperar dias para recebê-lo e poderá baixar, imprimir e encadernar como desejar e quando quiser, pois o acesso é vitalício!</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">COMO SERÁ FEITO O ENVIO DO MATERIAL? <span class="seta">+</span></button>
+        <div class="faq-resposta">O acesso com todos os BÔNUS desta oferta será liberado no seu e-mail de compra logo após confirmação de pagamento. Nosso material está hospedado numa área de membros da Hotmart, empresa grande, séria e considerada a maior plataforma de vendas online do Brasil.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">É CATÓLICO OU EVANGÉLICO? <span class="seta">+</span></button>
+        <div class="faq-resposta">Este material não faz diferenciação entre a Bíblia Católica ou Evangélica.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao-fechamento">
+    <h2 class="fechamento-titulo">📖 Mais do que figurinhas…</h2>
+    <p class="fechamento-subtitulo">…uma forma divertida de fazer crianças se apaixonarem pela Bíblia.</p>
+    <p class="fechamento-verso">As figurinhas completam o álbum,<br>a Palavra de Deus completa o coração.</p>
+    <a href="https://pay.hotmart.com/D105931460H?checkoutMode=10" class="btn-comprar-lg" target="_blank" rel="noopener">QUERO COMEÇAR MINHA COLEÇÃO</a>
+    <p style="margin-top:32px; font-size:14px; color:var(--cor-texto-suave);">
+      Ainda restou alguma dúvida? Entre em contato com a nossa equipe:<br />
+      <a href="mailto:bibliatecamapeada@gmail.com" style="color:var(--cor-primaria);">bibliatecamapeada@gmail.com</a>
     </p>
-    <div class="barriers">
-      <div class="barrier-card">
-        <div class="barrier-icon">📱</div>
-        <div class="barrier-title">Concorrência com as telas</div>
-        <div class="barrier-text">Games e vídeos capturam atenção com recompensas instantâneas. A experiência de colecionar cria o mesmo engajamento mas com propósito.</div>
-      </div>
-      <div class="barrier-card">
-        <div class="barrier-icon">📖</div>
-        <div class="barrier-title">Contexto distante</div>
-        <div class="barrier-text">As histórias bíblicas parecem distantes da realidade infantil. O álbum organiza tudo de forma visual, acessível e cronológica.</div>
-      </div>
-      <div class="barrier-card">
-        <div class="barrier-icon">🗣️</div>
-        <div class="barrier-title">Linguagem difícil</div>
-        <div class="barrier-text">Termos arcaicos criam distância. Cada figurinha apresenta o herói de forma simples com versículo fácil de entender e memorizar.</div>
-      </div>
+    <div style="display:flex; justify-content:center; gap:20px; margin-top:16px;">
+      <a href="https://api.whatsapp.com/message/CPY77AHXZDB6L1" target="_blank" rel="noopener" style="color:var(--cor-verde); text-decoration:none; font-weight:600;">💬 WhatsApp</a>
+      <a href="https://www.instagram.com/bibliatecamapeada" target="_blank" rel="noopener" style="color:var(--cor-primaria); text-decoration:none; font-weight:600;">📸 Instagram</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="quote-section">
-  <p class="quote-text">"Deixem as crianças virem a mim e não as impeçam, pois o Reino dos céus pertence aos que são semelhantes a elas."</p>
-  <p class="quote-ref">Mateus 19:14</p>
-</section>
-
-<section class="whatis-section">
-  <div class="whatis-inner">
-    <h2 class="section-title">O que é Heróis da Bíblia?</h2>
-    <p class="section-sub">Um kit digital completo que transforma o aprendizado bíblico em uma brincadeira que a criança pede pra repetir.</p>
-    <div class="whatis-grid">
-      <div class="whatis-card">
-        <div class="whatis-icon">👤</div>
-        <div class="whatis-card-title">Personagens bíblicos</div>
-        <div class="whatis-card-text">Quem foram os principais heróis e qual foi o papel de cada um na história sagrada.</div>
-      </div>
-      <div class="whatis-card">
-        <div class="whatis-icon">📜</div>
-        <div class="whatis-card-title">Versículos em cada figurinha</div>
-        <div class="whatis-card-text">Cada figurinha traz uma passagem bíblica relacionada ao personagem para momentos devocionais em família.</div>
-      </div>
-      <div class="whatis-card">
-        <div class="whatis-icon">🗂️</div>
-        <div class="whatis-card-title">Categorias organizadas</div>
-        <div class="whatis-card-text">Patriarcas, Reis, Profetas, Apóstolos, Mulheres da Bíblia e muito mais em ordem cronológica.</div>
-      </div>
-      <div class="whatis-card">
-        <div class="whatis-icon">🌍</div>
-        <div class="whatis-card-title">Do AT ao NT</div>
-        <div class="whatis-card-text">Uma jornada completa do Gênesis ao Apocalipse facilitando o entendimento e a memorização pela criança.</div>
-      </div>
+  <footer>
+    <img src="COLE_AQUI_LINK_LOGO" alt="BíbliaTeca Mapeada" class="logo-footer" />
+    <div class="links-footer">
+      <a href="mailto:bibliatecamapeada@gmail.com">✉️ E-mail</a>
+      <a href="https://api.whatsapp.com/message/CPY77AHXZDB6L1" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="https://www.instagram.com/bibliatecamapeada" target="_blank" rel="noopener">📸 Instagram</a>
     </div>
-  </div>
-</section>
+    <p>BíbliaTeca Mapeada © 2023 – Todos os direitos reservados</p>
+  </footer>
 
-<section class="team-section">
-  <h2 class="team-title">🏆 O Time de Heróis</h2>
-  <p class="team-sub">Seu filho vai conhecer os campeões da fé de todas as épocas</p>
-  <div class="team-grid">
-    <div class="team-badge">👑 Reis</div>
-    <div class="team-badge">⚔️ Juízes</div>
-    <div class="team-badge">🔥 Profetas</div>
-    <div class="team-badge">🕊️ Apóstolos</div>
-    <div class="team-badge">👨 Patriarcas</div>
-    <div class="team-badge">👩 Mulheres da Bíblia</div>
-    <div class="team-badge">📜 Líderes do AT</div>
-    <div class="team-badge">✨ Precursores</div>
-    <div class="team-badge">🏛️ Líderes Pós Exílio</div>
-  </div>
-</section>
-
-<section class="includes-section">
-  <div class="includes-inner">
-    <h2 class="section-title">O que você recebe</h2>
-    <p class="section-sub">Tudo que precisa para começar a colecionar agora mesmo.</p>
-    <div class="includes-list">
-      <div class="include-item">
-        <div class="include-icon-wrap">📖</div>
-        <div>
-          <div class="include-title">Álbum completo para imprimir</div>
-          <div class="include-desc">Todas as páginas organizadas por categoria com espaço para cada figurinha ser colada.</div>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-icon-wrap">🎴</div>
-        <div>
-          <div class="include-title">Pack com 80 figurinhas bíblicas</div>
-          <div class="include-desc">Todos os heróis ilustrados com nome, versículo e categoria prontos para imprimir e recortar.</div>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-icon-wrap">🏅</div>
-        <div>
-          <div class="include-title">Certificado de conclusão</div>
-          <div class="include-desc">Ao completar o álbum seu filho recebe um certificado especial da jornada pela Palavra.</div>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-icon-wrap">🖨️</div>
-        <div>
-          <div class="include-title">Guia de impressão e montagem</div>
-          <div class="include-desc">Orientações completas para imprimir e montar o material em casa sem complicação.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="certificate-section">
-  <div class="cert-emoji">🏅</div>
-  <h2 class="cert-title">Missão Cumprida!</h2>
-  <p class="cert-text">
-    Ao completar o álbum a criança recebe um certificado especial.<br><br>
-    E na última página existe uma figurinha especial reservada…<br>
-    <span class="cert-highlight">✨ A DELA.</span><br><br>
-    Porque quem caminha com Deus também é um herói da fé. 💛
-  </p>
-</section>
-
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <h2 class="section-title">Famílias que já transformaram a brincadeira em fé</h2>
-    <p class="section-sub">Resultados reais de pais e mães que usaram o método.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Minha filha de 5 anos pede todo dia pra colar as figurinhas. Ela já sabe o nome de vários profetas de cor!"</p>
-        <p class="testimonial-author">Ana Claudia M.  São Paulo/SP</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Usei na escola dominical e as crianças ficaram super animadas. Melhor recurso que já usei para ensinar a Bíblia."</p>
-        <p class="testimonial-author">Pastor Ricardo T.  Belo Horizonte/MG</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Imprimi, montei em uma tarde e meu filho de 7 anos ficou fascinado. Vale muito mais do que o preço!"</p>
-        <p class="testimonial-author">Fernanda S.  Curitiba/PR</p>
-      </div>
-    </div>
-    <p class="testimonials-count">⭐ Mais de 500 famílias já começaram a colecionar</p>
-  </div>
-</section>
-
-<section class="pricing-section">
-  <div class="pricing-badge">⭐ Oferta Especial de Lançamento</div>
-  <h2 class="pricing-title">Heróis da Bíblia</h2>
-  <p class="pricing-sub">Álbum + Figurinhas + Certificado + Guia de Impressão<br>Acesso imediato e vitalício</p>
-
-  <div class="pricing-card">
-    <p class="pricing-product">📖 O que vem no kit:</p>
-    <ul class="pricing-includes">
-      <li><span class="check">✅</span> Álbum completo para imprimir</li>
-      <li><span class="check">✅</span> 80 figurinhas bíblicas ilustradas</li>
-      <li><span class="check">✅</span> Certificado de conclusão</li>
-      <li><span class="check">✅</span> Guia de impressão passo a passo</li>
-      <li><span class="check">✅</span> Acesso imediato e vitalício</li>
-    </ul>
-
-    <p class="price-installment">ou 4x de R$ 4,97</p>
-    <p class="price-main"><span>R$</span>19,90</p>
-    <p class="price-note">à vista   pagamento único</p>
-
-    <a href="https://pay.kirvano.com/b46da561-8572-4135-9ac4-93ce6e0647ff" class="cta-btn">🎴 QUERO MEU ÁLBUM AGORA</a>
-
-    <div class="trust-row">
-      <span class="trust-item">📥 Download imediato</span>
-      <span class="trust-item">🔒 Compra segura</span>
-      <span class="trust-item">💚 Acesso vitalício</span>
-    </div>
-  </div>
-</section>
-
-<section class="guarantee-section">
-  <div class="guarantee-inner">
-    <div class="guarantee-icon">🛡️</div>
-    <h2 class="guarantee-title">Garantia de 7 dias   risco zero</h2>
-    <p class="guarantee-text">Confiamos tanto na qualidade do nosso material que oferecemos garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
-  </div>
-</section>
-
-<section class="faq-section">
-  <div class="faq-inner">
-    <h2 class="section-title">Perguntas frequentes</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          O material é físico ou digital?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">O Heróis da Bíblia é um produto 100% digital com acesso imediato. Você baixa, imprime e monta em casa quando quiser pois o acesso é vitalício.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Como recebo após a compra?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Após a confirmação do pagamento o acesso é liberado no seu e-mail cadastrado. Você acessa pela plataforma e baixa todos os arquivos.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          É para católicos ou evangélicos?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">O material é cristão geral e não faz distinção entre Bíblia Católica ou Evangélica. Serve para qualquer família cristã.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Para qual faixa etária é indicado?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">O álbum foi desenvolvido para crianças de 4 a 12 anos mas toda a família pode participar da brincadeira juntos.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Preciso de impressora especial?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Não. Qualquer impressora doméstica funciona. O guia de impressão incluído explica tudo passo a passo para o melhor resultado.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="final-cta">
-  <h2 class="final-cta-title">Mais do que figurinhas<br>uma forma de fazer crianças<br><span>se apaixonarem pela Bíblia.</span></h2>
-  <p class="final-cta-sub">As figurinhas completam o álbum.<br>A Palavra de Deus completa o coração. 🙏</p>
-  <a href="https://pay.kirvano.com/b46da561-8572-4135-9ac4-93ce6e0647ff" class="final-cta-btn">🎴 QUERO COMEÇAR MINHA COLEÇÃO</a>
-</section>
-
-<footer>
-  <p>Heróis da Bíblia © 2026   Todos os direitos reservados<br>
-  Produto digital   Acesso imediato   Garantia de 7 dias</p>
-</footer>
-
-<style>
-  .social-proof {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    pointer-events: none;
-  }
-
-  .sp-toast {
-    background: var(--white);
-    border-left: 4px solid var(--emerald);
-    border-radius: 10px;
-    padding: 10px 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.82rem;
-    color: var(--text);
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    max-width: 260px;
-    animation: slideIn 0.4s ease forwards;
-    opacity: 0;
-  }
-
-  .sp-toast.hiding {
-    animation: slideOut 0.4s ease forwards;
-  }
-
-  .sp-text { line-height: 1.4; }
-  .sp-text span { color: var(--emerald-dark); }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-30px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes slideOut {
-    from { opacity: 1; transform: translateX(0); }
-    to   { opacity: 0; transform: translateX(-30px); }
-  }
-
-  @media (max-width: 480px) {
-    .social-proof { bottom: 12px; left: 10px; }
-    .sp-toast { max-width: 220px; font-size: 0.78rem; }
-  }
-</style>
-
-<div class="social-proof" id="socialProof"></div>
-
-<script>
-  function toggleFaq(btn) {
-    const item = btn.parentElement;
-    item.classList.toggle('open');
-  }
-
-  const compradores = [
-    { nome: "Ana Paula S.", cidade: "São Paulo/SP" },
-    { nome: "Juliana M.", cidade: "Belo Horizonte/MG" },
-    { nome: "Fernanda R.", cidade: "Curitiba/PR" },
-    { nome: "Camila O.", cidade: "Rio de Janeiro/RJ" },
-    { nome: "Patrícia L.", cidade: "Fortaleza/CE" },
-    { nome: "Mariana T.", cidade: "Brasília/DF" },
-    { nome: "Larissa C.", cidade: "Salvador/BA" },
-    { nome: "Renata F.", cidade: "Porto Alegre/RS" },
-    { nome: "Débora N.", cidade: "Manaus/AM" },
-    { nome: "Priscila A.", cidade: "Recife/PE" },
-    { nome: "Cristiane V.", cidade: "Goiânia/GO" },
-    { nome: "Simone B.", cidade: "Natal/RN" },
-    { nome: "Vanessa H.", cidade: "Campinas/SP" },
-    { nome: "Aline K.", cidade: "Florianópolis/SC" },
-    { nome: "Luciana P.", cidade: "Belém/PA" },
-    { nome: "Tatiane W.", cidade: "São Luís/MA" },
-    { nome: "Gabriela E.", cidade: "Vitória/ES" },
-    { nome: "Rosana D.", cidade: "Campo Grande/MS" },
-    { nome: "Elaine Q.", cidade: "Maceió/AL" },
-    { nome: "Adriana Z.", cidade: "João Pessoa/PB" },
-  ];
-
-  let idx = Math.floor(Math.random() * compradores.length);
-  const container = document.getElementById('socialProof');
-
-  function showToast() {
-    const pessoa = compradores[idx % compradores.length];
-    idx++;
-
-    const toast = document.createElement('div');
-    toast.className = 'sp-toast';
-    toast.innerHTML = `
-      <div class="sp-text">
-        <span>${pessoa.nome}</span> de ${pessoa.cidade} acabou de comprar!
-      </div>
-    `;
-
-    container.appendChild(toast);
-
-    setTimeout(() => {
-      toast.classList.add('hiding');
-      setTimeout(() => toast.remove(), 400);
-    }, 4000);
-  }
-
-  // Começa após 3 segundos, depois aparece a cada 15 segundos
-  setTimeout(() => {
-    showToast();
-    setInterval(showToast, 15000);
-  }, 3000);
-</script>
-
-
-<script>
-  window.addEventListener('load', function() {
-    fbq('track', 'ViewContent', {
-      content_name: 'Heróis da Bíblia',
-      content_category: 'Infoproduto',
-      currency: 'BRL',
-      value: 29.90
-    });
-  });
-</script>
+  <script>
+    function toggleFaq(btn) {
+      btn.classList.toggle('aberta');
+      btn.nextElementSibling.classList.toggle('visivel');
+    }
+  </script>
 
 </body>
 </html>
